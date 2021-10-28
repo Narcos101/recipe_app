@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'recipe-detail.css' %}">
 </head>
 <body>
-    
+    <article>
+        <img id="main-image" src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+      
+        <section id="title">
+          <h2>Title</h2>
+          <address>This recipe takes about <span>{{ recipe.location.name }}</span> to prepare.</address>
+        </section>
+      
+        <section id="details">
+          <h2>How to prepare the recipe!</h2>
+          <p>{{ recipe.description }}</p>
+        </section>
+      
+      </article>
 </body>
 </html>
