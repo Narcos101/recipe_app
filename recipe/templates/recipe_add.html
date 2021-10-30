@@ -7,12 +7,11 @@
     <title>Add Recipe!</title>
 </head>
 <body>
-    <form action="{% url 'home' %}" method="POST">
-        {% csrf_token %}
-        <ul>
-            {{ form.as_ul }}
-        </ul>
-        <button type="submit">POST</button>
-    </form>
+    
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
