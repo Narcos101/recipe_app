@@ -6,3 +6,6 @@ class recipe(models.Model):
     timetaken=models.IntegerField()
     image=models.ImageField(upload_to='images')
 
+    def __str__(self):
+        return self.title + "-" + str(self.timetaken)
+
