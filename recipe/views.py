@@ -20,7 +20,7 @@ def recipe_add(request):
         return render(request,'recipe_add.html',{'form':form})
     else:
         form = Recipeform(request.POST,request.FILES)
-        print(form.data)
+        # print(form.data)
         if form.is_valid():
             form.save()
         return render(request,'success.html')
