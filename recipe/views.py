@@ -15,8 +15,15 @@ def recipe_details(request,recipe_id):
         return render(request,'404.html')
 
 def recipe_add(request):
+    rep = recipe.objects.all()
     if request.method == 'GET':
         form = Recipeform()
         return render(request,'recipe_add.html',{'form':form})
+    else:
+        recipe_form = Recipeform(request.POST)
+        if recipe_form.is_valid():
+            recipeForm = recipe_form.save()
+            rep.add(recipeForm)
+    return render(request,'index.html')
     
     
