@@ -24,6 +24,5 @@ def recipe_add(request):
         if recipe_form.is_valid():
             recipeForm = recipe_form.save()
             rep.add(recipeForm)
-    return render(request,'index.html')
-    
+        return render(request,'success.html')    
     
