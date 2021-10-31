@@ -11,12 +11,12 @@
 <body>
     <article>
         <img id="main-image" src="{{ selected_recipe.image.url }}" alt="">
-      
+        <br><br><br><br><br>
         <section id="title">
           <h2>{{ selected_recipe.title }}</h2>
-          <address>This recipe takes about <span>{{ selected_recipe.timetaken }}</span> to prepare.</address>
+          <address>This recipe takes about <span>{{ selected_recipe.timetaken }}</span> minutes to prepare.</address>
         </section>
-      
+        
         <section id="details">
           <h2>How to prepare the recipe!</h2>
           <p>{{ selected_recipe.description }}</p>
