@@ -3,7 +3,7 @@ from .models import recipe
 from .forms import Recipeform
 
 def recipes(request):
-    api = recipe.objects.all()
+    api = recipe.objects.all().order_by('-id')
     return render(request,'index.html',{'api':api})
 
 
